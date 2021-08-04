@@ -1,0 +1,7 @@
+version: '3'
+services: 
+  rtm:
+    build:
+      context: . 
+      dockerfile: RTMCore/Dockerfile
+    image: "iboslimitedbd/rtm:${tag}"

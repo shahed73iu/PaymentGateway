@@ -1,0 +1,8 @@
+﻿
+**** Write Scaffold **********************
+
+scaffold-DbContext "Data Source=20.195.36.155,49621;Initial Catalog=iBOSDDD;User ID=isukisespts3vapp8dt;Password=wsa0str1vpo@8d5ws;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Write" -ContextDir "DbContexts" -Context "WriteDbContext" -NoPluralize  -t bill.tblAccount -f
+
+**** Read Scaffold **********************
+
+scaffold-DbContext "Data Source=20.195.36.155,49621;Initial Catalog=iBOSDDD;User ID=isukisespts3vapp8dt;Password=wsa0str1vpo@8d5ws;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Read" -ContextDir "DbContexts" -Context "ReadDbContext" -NoPluralize -t bill.tblAccount -f 
