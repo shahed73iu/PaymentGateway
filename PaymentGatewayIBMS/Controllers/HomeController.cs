@@ -88,7 +88,7 @@ namespace PaymentGatewayIPaymentGatewayIBMS.Controllers
             {
                 _logger.LogInformation("transId > " + trans.TransId + " >  SSLCOMMERZ > " + ex.Message);
 
-                Response.Redirect("~/Home/Unauthorised?err=invalid gateway parameters");
+               // Response.Redirect("~/Home/Unauthorised?err=invalid gateway parameters");
                 return BadRequest(ex);
             }
         }
