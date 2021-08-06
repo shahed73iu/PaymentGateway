@@ -20,12 +20,14 @@ namespace PaymentGatewayIPaymentGatewayIBMS.Controllers
         {
             _logger = logger;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
 
-        public IActionResult SslCommerz(string requestedFrom, PaymentGatewayTransaction trans, string gatewayId, string gatewayPass, string enabledPayMethods)
+        [HttpPost("SslCommerz")]
+        //[HttpPost("SslCommerz/{gatewayId}/{gatewayPass}/{enabledPayMethods}")]
+        public IActionResult SslCommerz(string gatewayId, string gatewayPass, string enabledPayMethods, [FromBody] PaymentGatewayTransaction trans)
         {
             try
             {
@@ -68,7 +70,7 @@ namespace PaymentGatewayIPaymentGatewayIBMS.Controllers
                 PostData.Add("product_category", "fee");
                 PostData.Add("product_profile", "non-physical-goods");
 
-                PostData.Add("value_a", requestedFrom);
+               // PostData.Add("value_a", requestedFrom);
 
                // SignIn(trans.TransId.ToString(), requestedFrom);
 
@@ -78,15 +80,16 @@ namespace PaymentGatewayIPaymentGatewayIBMS.Controllers
                 _logger.LogInformation("START >> SSLCOMMERZ >> transId > " + trans.TransId);
 
 
-                Response.Redirect(response, false);
-                return null;
+                //Response.Redirect(response, false);
+                return Ok(response);
+                
             }
             catch (Exception ex)
             {
                 _logger.LogInformation("transId > " + trans.TransId + " >  SSLCOMMERZ > " + ex.Message);
 
                 Response.Redirect("~/Home/Unauthorised?err=invalid gateway parameters");
-                return null;
+                return BadRequest(ex);
             }
         }
     }
