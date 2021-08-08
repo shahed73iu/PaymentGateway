@@ -7,12 +7,28 @@ namespace PaymentGatewayIPaymentGatewayIBMS.Models
 {
     public class PaymentGatewayTransaction
     {
-        //public int? Id { get; set; }
-        //public int? TypeId { get; set; }
-        //public int? InstituteId { get; set; }
-        //public int? PaymentGatewayId { get; set; }
+        public int? Id { get; set; }
+        public int? TypeId { get; set; }
+        public int? InstituteId { get; set; }
+        public int? PaymentGatewayId { get; set; }
+
+        /// <summary>
+        /// ///////////////////////////////////////////////////////////////////////////
+        /// </summary>
         public bool IsLive { get; set; }
         public int? TransId { get; set; } //
+        public Decimal TotalAmount { get; set; }
+        public string CustomerName { get; set; }
+        public string CustomerEmail { get; set; }
+        public string CustomerAdd1 { get; set; }
+        public string CustomerAdd2 { get; set; }
+        public string CustomerCity { get; set; }
+        public string CustomerPostCode { get; set; }
+        public string CustomerCountry { get; set; }
+        public string CustomerPhone { get; set; }
+        public bool IsEnableEmi { get; set; }
+        public Decimal? ConvertionRate { get; set; }
+      //  public string CustomerState { get; set; }
         //public int UserInfoId { get; set; }
         //public int CurrencyId { get; set; }
         //public string Currency { get; set; } // 
@@ -20,7 +36,6 @@ namespace PaymentGatewayIPaymentGatewayIBMS.Models
         //public Decimal? ChargePercentage { get; set; }
         //public Decimal? Charges { get; set; }
         //public Decimal? RoundingCharge { get; set; }
-        public Decimal TotalAmount { get; set; }
         //public Decimal? ReceiveableAmount { get; set; }
         //public string PayStatus { get; set; }
         //public DateTime PaymentDate { get; set; }
@@ -37,15 +52,6 @@ namespace PaymentGatewayIPaymentGatewayIBMS.Models
         //public string VarifyKey { get; set; }
         //public string RiskTitle { get; set; }
         //public string RiskCode { get; set; }
-        public string CustomerName { get; set; }
-        public string CustomerEmail { get; set; }
-        public string CustomerAdd1 { get; set; }
-        public string CustomerAdd2 { get; set; }
-        public string CustomerCity { get; set; }
-      //  public string CustomerState { get; set; }
-        public string CustomerPostCode { get; set; }
-        public string CustomerCountry { get; set; }
-        public string CustomerPhone { get; set; }
         ////public string ExtParam1 { get; set; }
         ////public string ExtParam2 { get; set; }
         ////public string ExtParam3 { get; set; }
@@ -63,7 +69,6 @@ namespace PaymentGatewayIPaymentGatewayIBMS.Models
         //public Decimal DiscountAmount { get; set; }
         //public Decimal DiscountPercentage { get; set; }
         //public string DiscountRemarks { get; set; }
-        public bool IsEnableEmi { get; set; }
         //public bool? IsCompleted { get; set; }
         //public int FeesCollectionId { get; set; }
         //public int FeesBootId { get; set; }
@@ -73,7 +78,6 @@ namespace PaymentGatewayIPaymentGatewayIBMS.Models
         //public bool DoTransaction { get; set; }
         //public int? AcasdamicBranchId { get; set; }
         //public string Discription { get; set; }
-        public Decimal? ConvertionRate { get; set; }
         //public bool IsSuccessFrombackend { get; set; }
     }
 }
